@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct ListRowView: View {
+    
+    let item: ItemModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack{
+            Image(systemName: item.isCompleted ? "checkmark.circle" : "circle")
+                .foregroundStyle(item.isCompleted ? .green : .red)
+            Text(item.title)
+            Spacer()
+        }
+        .background(Color.white)
+        
     }
 }
 
-#Preview {
-    ListRowView()
-}
